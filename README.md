@@ -4,6 +4,25 @@ Welcome to my GitHub! I'm Abhilash Rajjan, an AI operations expert and customer 
 
 ---
 
+## 🌟 Featured Projects
+
+- **[GST Automation MVP](https://github.com/abhilashrajjan-555/gst-automation-mvp)** — Full-stack B2B automation for Indian SMBs | React + FastAPI | Saves 75% filing time
+- **[Chat Adoption Race](https://github.com/abhilashrajjan-555/chat-adoption-race)** — Interactive D3.js visualization | CX insights dashboard | [Live Demo](https://abhilashrajjan-555.github.io/chat-adoption-race/)
+- **[Prompt Database](https://github.com/abhilashrajjan-555/prompt-database)** — 20 production-ready prompts | Next.js + TypeScript | AI operations toolkit
+- **[Resume AI Optimizer](https://github.com/abhilashrajjan-555/resumeai-optimizer)** — AI agent for career operations | Resume analysis & optimization
+
+- ---
+
+## 📠 Tech Stack & Badges
+
+![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat-square)
+![React](https://img.shields.io/badge/React-18+-61dafb?style=flat-square)
+![FastAPI](https://img.shields.io/badge/FastAPI-Production-green?style=flat-square)
+![Next.js](https://img.shields.io/badge/Next.js-16+-black?style=flat-square)
+![TypeScript](https://img.shields.io/badge/TypeScript-Latest-3178c6?style=flat-square)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v3-38b2ac?style=flat-square)
+![AI](https://img.shields.io/badge/AI-GenAI%20%7C%20Agents-orange?style=flat-square)
+
 ## 💡 What I Do
 
 - **AI Operations & Automation**: Designing and implementing AI-driven workflows to optimize operational efficiency
