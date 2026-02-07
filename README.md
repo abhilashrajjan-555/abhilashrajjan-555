@@ -1,105 +1,65 @@
-# 🤖 AI Operations & Customer Experience Leader
+# Hi, I'm Abhilash Rajjan
 
-Welcome to my GitHub! I'm Abhilash Rajjan, an AI operations expert and customer experience leader focused on **scaling operations with intelligent AI agents** and **generative AI automation**.
+**I'm not a developer.** I'm an operations leader with 8+ years in customer experience and AI-driven scaling. Every project on this profile was built using AI coding assistants — Claude, ChatGPT, Cursor, and other AI tools.
 
----
+Zero traditional coding background. Just domain expertise, clear thinking, and AI.
 
-## 🌟 Featured Projects
-
-- **[GST Automation MVP](https://github.com/abhilashrajjan-555/gst-automation-mvp)** — Full-stack B2B automation for Indian SMBs | React + FastAPI | Saves 75% filing time
-- **[Chat Adoption Race](https://github.com/abhilashrajjan-555/chat-adoption-race)** — Interactive D3.js visualization | CX insights dashboard | [Live Demo](https://abhilashrajjan-555.github.io/chat-adoption-race/)
-- **[Prompt Database](https://github.com/abhilashrajjan-555/prompt-database)** — 20 production-ready prompts | Next.js + TypeScript | AI operations toolkit
-- **[Resume AI Optimizer](https://github.com/abhilashrajjan-555/resumeai-optimizer)** — AI agent for career operations | Resume analysis & optimization
-
-- ---
-
-## 📠 Tech Stack & Badges
-
-![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat-square)
-![React](https://img.shields.io/badge/React-18+-61dafb?style=flat-square)
-![FastAPI](https://img.shields.io/badge/FastAPI-Production-green?style=flat-square)
-![Next.js](https://img.shields.io/badge/Next.js-16+-black?style=flat-square)
-![TypeScript](https://img.shields.io/badge/TypeScript-Latest-3178c6?style=flat-square)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v3-38b2ac?style=flat-square)
-![AI](https://img.shields.io/badge/AI-GenAI%20%7C%20Agents-orange?style=flat-square)
-
-## 💡 What I Do
-
-- **AI Operations & Automation**: Designing and implementing AI-driven workflows to optimize operational efficiency
-- **Generative AI Integration**: Pioneering Generative AI adoption in customer-facing processes
-- **Customer Experience Excellence**: Leading initiatives that deliver 95%+ customer satisfaction
-- **Cost Optimization**: Reducing operational costs while maintaining/improving service quality
-- **Team Leadership**: Building and scaling high-performing operations teams across geographies
+**This is what's possible when AI meets someone who knows the problem deeply.**
 
 ---
 
-## 🎯 Key Achievements
+## What I Build (With AI)
 
-✅ **Scaled Operations**: Transformed a 10-person team into 50+ professionals, delivering 30% YoY revenue growth  
-✅ **AI Implementation**: Pioneered Generative AI integration reducing response times by 25% and cutting operational costs by $450K+ annually  
-✅ **Customer Excellence**: Achieved 95% customer satisfaction (industry average: 78%)  
-✅ **Process Optimization**: Designed KPI frameworks that improved team productivity by 20%  
-✅ **Global Operations**: Built cross-cultural management frameworks for seamless India-Australia 24/7 service delivery
-
----
-
-## 🛠️ Tech Stack & Skills
-
-**AI & Automation**
-- Generative AI & Large Language Models
-- AI Agents & Agentic AI
-- ChatGPT, prompt engineering, AI workflows
-- Business process automation
-
-**Operations & Leadership**
-- Digital Transformation
-- Operations Management
-- IT Cost Optimization
-- Team Leadership & Cross-functional Management
-
-**Background**
-- 8+ years in operations, customer experience, and AI-driven scaling
-- Expertise in B2B tech operations and customer service excellence
+| Project | What It Does | Live Demo |
+|---------|-------------|-----------|
+| [Project Management Tool](https://github.com/abhilashrajjan-555/project-management-tool) | Full-featured Kanban boards & task management | Coming soon |
+| [GST Automation MVP](https://github.com/abhilashrajjan-555/gst-automation-mvp) | Full-stack tax filing automation for Indian SMBs — saves 75% filing time | Coming soon |
+| [Livechat Dashboard](https://github.com/abhilashrajjan-555/Livechat_Dashboard) | Real-time CX analytics dashboard | [Live](https://livechat-dashboard.vercel.app) |
+| [Prompt Database](https://github.com/abhilashrajjan-555/prompt-database) | 20 production-ready prompts for daily operations | Coming soon |
+| [Chat Adoption Race](https://github.com/abhilashrajjan-555/chat-adoption-race) | Interactive D3.js visualization of chat vs voice adoption | [Live](https://abhilashrajjan-555.github.io/chat-adoption-race/) |
+| [Antigravity](https://github.com/abhilashrajjan-555/antigravity) | Interactive web experiment — pure vibe coding | [Live](https://antigravity-nine-brown.vercel.app) |
 
 ---
 
-## 🚀 Current Focus
+## How I Work
 
-I'm exploring innovative applications of **AI agents** for:
-- Process automation and workflow optimization
-- Intelligent customer service solutions
-- Operational cost reduction through AI
-- Building scalable AI-powered operations
+I don't write code line-by-line. I describe what I need, iterate with AI, and ship.
 
----
+My workflow: **Domain problem → Clear spec → AI pair programming → Working product**
 
-## 📚 Continuous Learning
-
-My latest certifications:
-- 🎓 **AI Agents & Agentic AI** (365 Data Science, Nov 2025)
-- 🎓 **Artificial Intelligence Fundamentals** (IBM, Dec 2024)
+The tools I use:
+- **Claude Code** & **ChatGPT** for building full-stack apps
+- **Cursor** for AI-native code editing
+- **Prompt engineering** to get precise outputs
+- **Vercel / GitHub Pages** for deployment
 
 ---
 
-## 🔗 Let's Connect
+## My Day Job
 
-- 💼 [LinkedIn Profile](https://www.linkedin.com/in/abhilashrajjan/)
-- 📧 Email: abhilashrajjan@gmail.com
-- 📍 Location: Thiruvananthapuram, India
+**AI Operations & CX Leader** — I've spent 8+ years scaling operations teams and integrating AI into real business workflows.
 
----
-
-## 🤝 Open To
-
-- Collaborations on AI automation & operations projects
-- Discussions on Generative AI implementation
-- Consulting on operations scaling with AI
-- Senior management roles in AI/Tech operations
+- Scaled a 10-person team to 50+, driving 30% YoY revenue growth
+- Pioneered GenAI integration that cut operational costs by $450K+ annually
+- Maintained 95% customer satisfaction (industry average: 78%)
+- Built India-Australia 24/7 service delivery operations
 
 ---
 
-*"Small goals require effort. Big goals require you to rebuild yourself entirely."*
+## Why This Matters
+
+The gap between "idea" and "working software" is collapsing. I'm proof that domain experts — not just developers — can now build real tools that solve real problems.
+
+If you have deep expertise in any field, you can build software. The AI tools are ready. The question is: what problem do you know better than anyone else?
 
 ---
 
-**Thanks for visiting! Feel free to reach out and let's build something intelligent together! 🚀**
+## Let's Connect
+
+- [LinkedIn](https://www.linkedin.com/in/abhilashrajjan/)
+- Email: abhilashrajjan@gmail.com
+- Location: Thiruvananthapuram, India
+
+---
+
+*Open to collaborations, AI consulting, and conversations about what non-developers can build with AI.*
