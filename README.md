@@ -1,56 +1,55 @@
 # Hi, I'm Abhilash Rajjan
 
-**I'm not a developer.** I'm an operations leader with 8+ years in customer experience and AI-driven scaling. Every project on this profile was built using AI coding assistants — Claude, ChatGPT, Cursor, and other AI tools.
+**I'm not a traditional developer.**  
+I'm an AI Operations and CX leader who builds working software through AI pair programming.
 
-Zero traditional coding background. Just domain expertise, clear thinking, and AI.
-
-**This is what's possible when AI meets someone who knows the problem deeply.**
-
----
-
-## What I Build (With AI)
-
-| Project | What It Does | Live Demo |
-|---------|-------------|-----------|
-| [Project Management Tool](https://github.com/abhilashrajjan-555/project-management-tool) | Full-featured Kanban boards & task management | Coming soon |
-| [GST Automation MVP](https://github.com/abhilashrajjan-555/gst-automation-mvp) | Full-stack tax filing automation for Indian SMBs — saves 75% filing time | Coming soon |
-| [Livechat Dashboard](https://github.com/abhilashrajjan-555/Livechat_Dashboard) | Real-time CX analytics dashboard | [Live](https://livechat-dashboard.vercel.app) |
-| [Prompt Database](https://github.com/abhilashrajjan-555/prompt-database) | 20 production-ready prompts for daily operations | Coming soon |
-| [Chat Adoption Race](https://github.com/abhilashrajjan-555/chat-adoption-race) | Interactive D3.js visualization of chat vs voice adoption | [Live](https://abhilashrajjan-555.github.io/chat-adoption-race/) |
-| [Antigravity](https://github.com/abhilashrajjan-555/antigravity) | Interactive web experiment — pure vibe coding | [Live](https://antigravity-nine-brown.vercel.app) |
+With 8+ years in customer operations, I use domain expertise plus AI tools to turn real business problems into shipped products.
 
 ---
 
-## How I Work
+## What You'll Find Here
 
-I don't write code line-by-line. I describe what I need, iterate with AI, and ship.
-
-My workflow: **Domain problem → Clear spec → AI pair programming → Working product**
-
-The tools I use:
-- **Claude Code** & **ChatGPT** for building full-stack apps
-- **Cursor** for AI-native code editing
-- **Prompt engineering** to get precise outputs
-- **Vercel / GitHub Pages** for deployment
+- Real products already deployed
+- MVPs in active build
+- Transparent documentation of in-progress ideas
 
 ---
 
-## My Day Job
+## Featured Projects
 
-**AI Operations & CX Leader** — I've spent 8+ years scaling operations teams and integrating AI into real business workflows.
+| Project | What It Does | Status / Demo |
+|---|---|---|
+| [Project Management Tool](https://github.com/abhilashrajjan-555/project-management-tool) | Kanban boards and task management built with Next.js | Deployment in progress |
+| [GST Automation MVP](https://github.com/abhilashrajjan-555/gst-automation-mvp) | GST workflow automation for Indian SMBs | Working locally (frontend + backend) |
+| [Livechat Dashboard](https://github.com/abhilashrajjan-555/Livechat_Dashboard) | Real-time CX analytics dashboard | [Live demo](https://livechat-dashboard.vercel.app) |
+| [Prompt Database](https://github.com/abhilashrajjan-555/prompt-database) | Prompt library for operations workflows | Code available, deployment pending |
+| [Chat Adoption Race](https://github.com/abhilashrajjan-555/chat-adoption-race) | D3 visualization of chat vs voice adoption | [Live demo](https://abhilashrajjan-555.github.io/chat-adoption-race/) |
+| [Antigravity](https://github.com/abhilashrajjan-555/antigravity) | Interactive web experiment | [Live demo](https://antigravity-nine-brown.vercel.app) |
+
+---
+
+## How I Build (Without Traditional Coding)
+
+1. Define the business problem clearly
+2. Break it into product specs
+3. Pair with AI tools to implement
+4. Test, iterate, and ship
+
+Tools I use:
+- Claude Code and ChatGPT
+- Cursor
+- Vercel and GitHub Pages
+
+---
+
+## Professional Background
+
+**AI Operations & CX Leader** with 8+ years scaling systems and service teams.
 
 - Scaled a 10-person team to 50+, driving 30% YoY revenue growth
-- Pioneered GenAI integration that cut operational costs by $450K+ annually
-- Maintained 95% customer satisfaction (industry average: 78%)
+- Led GenAI integration that cut operational costs by $450K+ annually
+- Maintained 95% customer satisfaction (industry average around 78%)
 - Built India-Australia 24/7 service delivery operations
-
----
-
-## Why This Matters
-
-The gap between "idea" and "working software" is collapsing. I'm proof that domain experts — not just developers — can now build real tools that solve real problems.
-
-If you have deep expertise in any field, you can build software. The AI tools are ready. The question is: what problem do you know better than anyone else?
 
 ---
 
@@ -62,4 +61,4 @@ If you have deep expertise in any field, you can build software. The AI tools ar
 
 ---
 
-*Open to collaborations, AI consulting, and conversations about what non-developers can build with AI.*
+*Open to collaborations in AI operations, workflow automation, and product experiments built by domain experts.*
