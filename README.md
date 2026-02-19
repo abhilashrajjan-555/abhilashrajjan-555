@@ -28,7 +28,6 @@ I build practical, production-minded applications that combine full-stack develo
 | **GST Automation MVP** | Full-stack GST workflow automation for SMB-focused finance operations. | React, FastAPI, Python | [Repo](https://github.com/abhilashrajjan-555/gst-automation-mvp) |
 | **Livechat Dashboard** | Real-time customer operations analytics dashboard for support teams. | JavaScript, dashboard analytics | [Repo](https://github.com/abhilashrajjan-555/Livechat_Dashboard) · [Live Demo](https://livechat-dashboard.vercel.app) |
 | **Chat Adoption Race** | Interactive data visualization on Live Chat vs Voice adoption trends (2010-2025). | HTML, JavaScript, data visualization | [Repo](https://github.com/abhilashrajjan-555/chat-adoption-race) · [Live Demo](https://abhilashrajjan-555.github.io/chat-adoption-race/) |
-| **Antigravity** | Creative interactive web experiment with polished frontend interactions. | TypeScript, web animation | [Repo](https://github.com/abhilashrajjan-555/antigravity) · [Live Demo](https://antigravity-nine-brown.vercel.app) |
 
 ## Engineering Principles
 
