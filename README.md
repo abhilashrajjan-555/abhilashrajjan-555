@@ -1,6 +1,6 @@
 # Hi, I'm Abhilash Rajjan
 
-**Software Engineer focused on AI-enabled products, workflow automation, and customer operations systems.**
+**I am an AI Generalist focused on AI-enabled products, workflow automation, and customer operations systems.**
 
 I build practical, production-minded applications that combine full-stack development with AI integrations to solve real business problems.
 
