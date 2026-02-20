@@ -45,7 +45,7 @@ I build practical, production-minded applications that combine full-stack develo
 
 ## Open To
 
-- Software engineering roles with AI/product focus
+- AI generalist roles with AI/product focus
 - Collaboration on automation, internal tooling, and AI applications
 - Consulting projects at the intersection of operations and software
 
