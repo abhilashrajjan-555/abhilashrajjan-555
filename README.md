@@ -1,53 +1,35 @@
 # Hi, I'm Abhilash Rajjan
 
-**I am an AI Generalist focused on AI-enabled products, workflow automation, and customer operations systems.**
+I lead operations and build practical software products using AI tools.
+My focus is simple: solve real business problems, ship useful apps, and keep improving through hands-on execution.
 
-I build practical, production-minded applications that combine full-stack development with AI integrations to solve real business problems.
+## What I Bring
 
-## What I Work On
+- 8+ years in customer experience and operations leadership
+- Product-minded builder who can turn messy workflows into working tools
+- AI-assisted development approach to move from idea to MVP quickly
+- Strong ownership across planning, execution, and iteration
 
-- AI-powered productivity and career tools
-- Full-stack internal tools for operations and CX teams
-- Data-informed dashboards and workflow automation systems
-- Fast MVP-to-production delivery with strong product thinking
+## Featured Projects
 
-## Tech Stack
-
-- **Languages:** JavaScript, TypeScript, Python, SQL
-- **Frontend:** React, Next.js, HTML/CSS, Tailwind
-- **Backend:** Node.js, Express, FastAPI
-- **AI & Data:** OpenAI-compatible APIs, prompt workflows, analytics dashboards
-- **Dev Tools:** GitHub, Vercel, CI workflows, AI-assisted development tooling
-
-## Selected Projects
-
-| Project | Summary | Tech | Links |
+| Project | What it does | Stack | Link |
 |---|---|---|---|
-| **AI Resume & Cover Letter Generator** | Generates ATS-friendly, role-tailored resumes and cover letters with downloadable PDFs. | Node.js, Express, OpenAI-compatible API, PDFKit | [Repo](https://github.com/abhilashrajjan-555/AI-Resume-Cover-Letter-Generator) |
-| **Project Management Tool** | Multi-board task management platform with modern frontend architecture. | Next.js, TypeScript, Tailwind CSS | [Repo](https://github.com/abhilashrajjan-555/project-management-tool) |
-| **GST Automation MVP** | Full-stack GST workflow automation for SMB-focused finance operations. | React, FastAPI, Python | [Repo](https://github.com/abhilashrajjan-555/gst-automation-mvp) |
-| **Livechat Dashboard** | Real-time customer operations analytics dashboard for support teams. | JavaScript, dashboard analytics | [Repo](https://github.com/abhilashrajjan-555/Livechat_Dashboard) · [Live Demo](https://livechat-dashboard.vercel.app) |
-| **Chat Adoption Race** | Interactive data visualization on Live Chat vs Voice adoption trends (2010-2025). | HTML, JavaScript, data visualization | [Repo](https://github.com/abhilashrajjan-555/chat-adoption-race) · [Live Demo](https://abhilashrajjan-555.github.io/chat-adoption-race/) |
+| **AI Resume & Cover Letter Generator** | Creates role-tailored resumes and cover letters with PDF export. | JavaScript, Node.js, Express | [Repository](https://github.com/abhilashrajjan-555/AI-Resume-Cover-Letter-Generator) |
+| **Project Management Tool** | Kanban-style project and task workflow app for execution tracking. | TypeScript, Next.js, Tailwind CSS | [Repository](https://github.com/abhilashrajjan-555/project-management-tool) |
+| **GST Automation MVP** | Finance workflow automation app with full-stack architecture. | Python, FastAPI, React | [Repository](https://github.com/abhilashrajjan-555/gst-automation-mvp) |
+| **Livechat Dashboard** | Live support analytics dashboard for CX performance visibility. | JavaScript | [Repository](https://github.com/abhilashrajjan-555/Livechat_Dashboard) · [Live Demo](https://livechat-dashboard.vercel.app) |
+| **Antigravity** | AI-assisted workspace for notes, tasks, and prompts. | TypeScript, React, Convex | [Repository](https://github.com/abhilashrajjan-555/antigravity) · [Live Demo](https://antigravity-nine-brown.vercel.app) |
 
-## Engineering Principles
+## Working Style
 
-- Build for user outcomes, not just code output
-- Keep systems simple, testable, and maintainable
-- Ship in increments with measurable impact
-- Prioritize reliability, clarity, and documentation
-
-## Professional Highlights
-
-- 8+ years leading customer operations and service systems
-- Scaled global teams and process infrastructure across high-growth environments
-- Delivered GenAI-led automation initiatives that reduced operational cost and cycle time
-- Strong product-to-execution ownership across business and engineering contexts
+- Start with the business problem, then pick the simplest technical path
+- Build in small, testable increments
+- Use AI tools for speed, while keeping decisions and quality human-led
+- Communicate clearly and document the why behind decisions
 
 ## Open To
 
-- AI generalist roles with AI/product focus
-- Collaboration on automation, internal tooling, and AI applications
-- Consulting projects at the intersection of operations and software
+I am actively looking for full-time roles where I can combine operations leadership, product thinking, and AI-powered software building.
 
 ## Connect
 
