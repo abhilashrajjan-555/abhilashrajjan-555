@@ -1,7 +1,7 @@
 # Hi, I'm Abhilash Rajjan
 
 Not a developer. Operations leader who builds real software products using AI.
-8+ years in CX and AI ops. Now shipping SaaS.
+8+ years in CX and AI ops. 
 
 ## What I Build
 
