@@ -10,7 +10,6 @@ I have 8+ years of experience in customer experience and AI operations. I use th
 |---|---|---|---|
 | **NexMind** | AI automation agency site for turning vague business workflows into scoped AI systems | Next.js, TypeScript | [Repo](https://github.com/abhilashrajjan-555/nexmind) / [Demo](https://nexmind-chi.vercel.app) |
 | **AI Resume & Cover Letter Generator** | Generates role-tailored resumes and cover letters with PDF export | Node.js, Express, AI | [Repo](https://github.com/abhilashrajjan-555/AI-Resume-Cover-Letter-Generator) |
-| **Project Management Tool** | Local-first Kanban workspace for project and task execution | Next.js, TypeScript, Tailwind CSS | [Repo](https://github.com/abhilashrajjan-555/project-management-tool) |
 | **GST Automation MVP** | Invoice upload, OCR extraction, and GST return workflow automation prototype | FastAPI, React, Supabase | [Repo](https://github.com/abhilashrajjan-555/gst-automation-mvp) |
 | **Livechat Dashboard** | CX analytics dashboard for live chat operations and performance visibility | React, Vite, Recharts | [Repo](https://github.com/abhilashrajjan-555/Livechat_Dashboard) / [Demo](https://livechat-dashboard.vercel.app) |
 | **Antigravity** | AI-assisted workspace for capturing and organizing notes, todos, and ideas | React, TypeScript, Convex | [Repo](https://github.com/abhilashrajjan-555/antigravity) / [Demo](https://antigravity-nine-brown.vercel.app) |
