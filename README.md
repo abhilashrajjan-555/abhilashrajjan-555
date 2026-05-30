@@ -8,11 +8,11 @@ I have 8+ years of experience in customer experience and AI operations. I use th
 
 | Project | What it solves | Stack | Links |
 |---|---|---|---|
-| **NexMind** | AI automation agency site for turning vague business workflows into scoped AI systems | Next.js, TypeScript | [Repo](https://github.com/abhilashrajjan-555/nexmind) / [Demo](https://nexmind-chi.vercel.app) |
+| **100_days_of_code** | Beginner-friendly coding practice with daily exercises, explanations, and hands-on learning notes | HTML, CSS, JavaScript | [Repo](https://github.com/abhilashrajjan-555/100_days_of_code) |
 | **AI Resume & Cover Letter Generator** | Generates role-tailored resumes and cover letters with PDF export | Node.js, Express, AI | [Repo](https://github.com/abhilashrajjan-555/AI-Resume-Cover-Letter-Generator) |
-| **GST Automation MVP** | Invoice upload, OCR extraction, and GST return workflow automation prototype | FastAPI, React, Supabase | [Repo](https://github.com/abhilashrajjan-555/gst-automation-mvp) |
+| **project-management-tool** | Simple project workspace for organizing tasks, tracking progress, and keeping execution clear | React, TypeScript, Vite | [Repo](https://github.com/abhilashrajjan-555/project-management-tool) |
 | **Livechat Dashboard** | CX analytics dashboard for live chat operations and performance visibility | React, Vite, Recharts | [Repo](https://github.com/abhilashrajjan-555/Livechat_Dashboard) / [Demo](https://livechat-dashboard.vercel.app) |
-| **Antigravity** | AI-assisted workspace for capturing and organizing notes, todos, and ideas | React, TypeScript, Convex | [Repo](https://github.com/abhilashrajjan-555/antigravity) / [Demo](https://antigravity-nine-brown.vercel.app) |
+| **ColorBrush** | Lightweight Paint-style drawing app with brush, eraser, shapes, swatches, undo, import, and export | HTML, CSS, JavaScript | [Repo](https://github.com/abhilashrajjan-555/ColorBrush) |
 
 ## Strengths
 
