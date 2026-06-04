@@ -2,36 +2,39 @@
 
 Operations leader building practical AI tools, SaaS MVPs, and workflow software.
 
-I have 8+ years of experience in customer experience and AI operations. I use that background to identify messy business workflows and turn them into simple working software.
+I have 8+ years of experience in customer experience and AI operations. I use that background to spot messy business workflows, design simpler operating systems, and ship working software that improves execution.
 
 ## Featured Work
 
 | Project | What it solves | Stack | Links |
 |---|---|---|---|
-| **100_days_of_code** | Beginner-friendly coding practice with daily exercises, explanations, and hands-on learning notes | HTML, CSS, JavaScript | [Repo](https://github.com/abhilashrajjan-555/100_days_of_code) |
-| **AI Resume & Cover Letter Generator** | Generates role-tailored resumes and cover letters with PDF export | Node.js, Express, AI | [Repo](https://github.com/abhilashrajjan-555/AI-Resume-Cover-Letter-Generator) |
-| **project-management-tool** | Simple project workspace for organizing tasks, tracking progress, and keeping execution clear | React, TypeScript, Vite | [Repo](https://github.com/abhilashrajjan-555/project-management-tool) |
-| **Livechat Dashboard** | CX analytics dashboard for live chat operations and performance visibility | React, Vite, Recharts | [Repo](https://github.com/abhilashrajjan-555/Livechat_Dashboard) / [Demo](https://livechat-dashboard.vercel.app) |
-| **ColorBrush** | Lightweight Paint-style drawing app with brush, eraser, shapes, swatches, undo, import, and export | HTML, CSS, JavaScript | [Repo](https://github.com/abhilashrajjan-555/ColorBrush) |
+| **FocusFlow** | Local-first productivity dashboard with Kanban tasks, Pomodoro focus sessions, quick capture, analytics, and JSON backup/restore | HTML, CSS, JavaScript | [Repo](https://github.com/abhilashrajjan-555/focusflow) / [Demo](https://focusflow-delta-pearl.vercel.app) |
+| **AI Concepts** | Beginner-friendly interactive app for learning foundational AI concepts through guided examples | TypeScript, React, Vite | [Repo](https://github.com/abhilashrajjan-555/ai-concepts) |
+| **Livechat Dashboard** | CX analytics dashboard for live chat operations, team performance, and support visibility | JavaScript, React, Vite | [Repo](https://github.com/abhilashrajjan-555/Livechat_Dashboard) / [Demo](https://livechat-dashboard.vercel.app) |
+| **GST Automation MVP** | Full-stack GST invoice OCR and return workflow automation prototype | Python, FastAPI, React | [Repo](https://github.com/abhilashrajjan-555/gst-automation-mvp) |
+| **Project Management Tool** | Local-first Kanban project workspace for planning tasks and tracking execution | Next.js, TypeScript | [Repo](https://github.com/abhilashrajjan-555/project-management-tool) |
+| **AI Resume & Cover Letter Generator** | Generates role-tailored resumes and cover letters with PDF export | Node.js, Express, AI APIs | [Repo](https://github.com/abhilashrajjan-555/AI-Resume-Cover-Letter-Generator) |
+| **NexMind** | AI automation agency site for scoped, practical workflow systems | Next.js, TypeScript | [Repo](https://github.com/abhilashrajjan-555/nexmind) / [Demo](https://nexmind-chi.vercel.app) |
+| **Chat Adoption Race** | Interactive data visualization of live chat versus voice support adoption trends | HTML, D3.js | [Repo](https://github.com/abhilashrajjan-555/chat-adoption-race) / [Demo](https://abhilashrajjan-555.github.io/chat-adoption-race/) |
 
 ## Strengths
 
-- Operations and customer experience domain knowledge
+- Customer operations and CX domain knowledge
 - AI-assisted product building
 - SaaS MVP development
 - Workflow automation
-- Clear documentation and execution ownership
+- Documentation, execution ownership, and practical product judgment
 
 ## How I Work
 
-- Start with the business problem, then pick the simplest technical path
-- Build in small, testable increments
-- Use AI tools for speed while keeping decisions and quality human-led
-- Document the why behind product and technical decisions
+- Start with the business problem, then choose the simplest technical path that can prove value.
+- Build in small, testable increments and keep the product usable at every stage.
+- Use AI tools for speed while keeping architecture, quality, and product decisions human-led.
+- Document the why behind product and technical decisions so projects are easy to evaluate.
 
 ## Looking For
 
-Full-time roles where I can combine operations leadership, AI tooling, product thinking, and hands-on software building.
+Full-time roles, consulting work, or product opportunities where operations leadership, AI tooling, and hands-on software building overlap.
 
 ## Connect
 
