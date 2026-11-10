@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Call Eva Promo</title>
+<style>
+  :root{
+    --ink:#14121a; --muted:#6b6878; --line:#e6e3ee;
+    --purple:#6a1b9a; --purple2:#9c27b0; --green:#1fae74; --magenta:#c2185b;
+    --red:#e53935; --orange:#ff6b2c; --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1920px;height:1080px;overflow:hidden;background:#f8f7fb}
+  body{font-family:"Inter","Inter Display",sans-serif;color:var(--ink)}
+  #stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:#f8f7fb}
+  .abs{position:absolute}
+  .scene{position:absolute;inset:0;opacity:0}
+  .display{font-family:"Inter Display";font-weight:900;letter-spacing:-0.04em}
+
+  /* background */
+  .blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.55}
+  #grid{position:absolute;inset:0;background-image:
+    linear-gradient(rgba(120,110,150,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(120,110,150,.05) 1px,transparent 1px);
+    background-size:64px 64px}
+  .dot{position:absolute;width:5px;height:5px;border-radius:50%;background:#55516a;opacity:.35}
+
+  .grad-purple{background:linear-gradient(90deg,#5b1585,#a0279e);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .grad-green{background:linear-gradient(90deg,#14a86b,#3bc98a);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .grad-magenta{background:linear-gradient(90deg,#a3134f,#d63a7a);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* S1 */
+  #s1-num{left:0;right:0;top:300px;text-align:center;font-size:300px;line-height:1}
+  #s1-sub{left:0;right:0;top:640px;text-align:center;font-size:72px;font-weight:700;color:#4a4658;font-family:"Inter Display"}
+
+  /* S2 */
+  #s2-word{left:0;right:0;top:330px;text-align:center;font-size:380px;line-height:1;color:#17151d}
+  #s2-sub{left:0;right:0;top:950px;text-align:center;font-size:56px;font-family:"Inter Display";font-weight:800;z-index:5}
+  .callcard{position:absolute;width:330px;padding:20px 24px;background:rgba(255,255,255,.92);border-radius:16px;
+    box-shadow:0 10px 30px rgba(40,30,70,.12);display:flex;gap:16px;align-items:center}
+  .callcard .ic{width:48px;height:48px;border-radius:50%;background:#efeaf6;display:flex;align-items:center;justify-content:center;flex:none}
+  .callcard b{display:block;font-size:22px;font-weight:700}
+  .callcard span{font-size:18px;color:var(--muted)}
+  .tag{position:absolute;background:var(--red);color:#fff;font-weight:700;font-size:20px;padding:7px 16px;border-radius:10px;
+    box-shadow:0 6px 16px rgba(229,57,53,.35);white-space:nowrap}
+
+  /* S3 */
+  #phone{left:180px;top:150px;width:378px;height:781px}
+  #phone img{width:100%;height:100%;display:block;filter:drop-shadow(0 30px 50px rgba(40,30,80,.25))}
+  #live{left:250px;top:880px;width:240px;text-align:center}
+  .pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:10px 20px;font-weight:700;font-size:20px;
+    box-shadow:0 8px 24px rgba(40,30,70,.12)}
+  .rec{width:12px;height:12px;border-radius:50%;background:var(--green)}
+  #panel{left:660px;top:150px;width:660px;height:780px;background:rgba(255,255,255,.9);border-radius:26px;
+    border:2px solid rgba(156,39,176,.25);box-shadow:0 0 0 10px rgba(156,39,176,.06),0 30px 60px rgba(40,30,80,.12);overflow:hidden}
+  #panel .hd{padding:28px 32px 20px;border-bottom:1px solid var(--line)}
+  #panel .hd b{font-size:26px}
+  #panel .hd div{font-size:18px;color:var(--purple);font-weight:600;margin-top:6px;display:flex;gap:10px;align-items:center}
+  #timer{position:absolute;right:32px;top:30px;font-family:"Inter Display";font-weight:800;font-size:28px;font-variant-numeric:tabular-nums;color:#3b3748}
+  #wave{position:absolute;left:32px;right:32px;bottom:26px;height:56px;display:flex;align-items:center;gap:5px}
+  #wave i{flex:1;background:linear-gradient(#a0279e,#5b1585);border-radius:4px;height:10px}
+  #msgs{position:absolute;left:0;right:0;top:110px;bottom:100px;overflow:hidden}
+  #msgs-in{position:absolute;left:32px;right:32px;top:24px}
+  .msg{max-width:78%;padding:16px 22px;border-radius:18px;font-size:24px;line-height:1.35;margin-bottom:16px;opacity:0}
+  .msg small{display:block;font-size:15px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px;opacity:.7}
+  .eva{background:#f2eef7}
+  .eva small{color:var(--purple)}
+  .cust{background:#fff;border:2px solid rgba(156,39,176,.45);margin-left:auto;box-shadow:0 6px 18px rgba(156,39,176,.12)}
+  .cust small{color:#6b6878}
+  .chip{position:absolute;left:1400px;width:420px;background:#fff;border-radius:16px;padding:18px 22px;font-size:22px;font-weight:600;
+    box-shadow:0 10px 30px rgba(40,30,70,.1);display:flex;align-items:center;gap:14px;opacity:0}
+  .chip em{font-style:normal;color:var(--muted);font-weight:500;font-size:18px;display:block}
+  .ck{width:34px;height:34px;border-radius:50%;border:3px solid var(--green);display:flex;align-items:center;justify-content:center;flex:none}
+  .ck::after{content:"";width:8px;height:15px;border:solid var(--green);border-width:0 4px 4px 0;transform:rotate(45deg) translate(-1px,-2px)}
+  #routed{left:1400px;top:690px;width:440px;text-align:center;opacity:0}
+  #routed div{font-size:26px;font-weight:600;color:#4a4658}
+  #routed b{font-size:96px;line-height:1.05}
+
+  /* S4 */
+  .stage-lbl{position:absolute;top:200px;width:400px;text-align:center;font-size:30px;font-weight:700}
+  #track{left:240px;top:300px;width:1440px;height:6px;background:#e3e0ea;border-radius:3px}
+  #track-fill{left:240px;top:300px;height:6px;background:var(--green);border-radius:3px;box-shadow:0 0 14px rgba(31,174,116,.6)}
+  #mover{top:252px;width:420px;background:#fff;border:3px solid #7fdcb4;border-radius:20px;padding:18px 24px;display:flex;gap:16px;align-items:center;
+    box-shadow:0 0 0 10px rgba(31,174,116,.08),0 18px 40px rgba(31,174,116,.18)}
+  #mover b{font-size:26px;display:block}
+  #mover span{font-size:19px;color:var(--muted)}
+  .stat{position:absolute;top:470px;width:500px;height:250px;background:rgba(255,255,255,.95);border-radius:22px;padding:34px 40px;
+    box-shadow:0 18px 50px rgba(40,30,70,.10);opacity:0}
+  .stat div{font-size:28px;font-weight:600;color:#4a4658;white-space:nowrap}
+  .stat b{display:block;font-size:136px;line-height:1.15;margin-top:6px}
+  #s4-foot{left:0;right:0;top:800px;text-align:center;font-size:36px;font-weight:700;opacity:0;display:flex;justify-content:center;gap:14px;align-items:center}
+  #s4-note{left:0;right:0;top:880px;text-align:center;font-size:22px;color:var(--muted);opacity:0}
+
+  /* S5 */
+  #s5-logo{left:0;right:0;top:250px;text-align:center;opacity:0}
+  #s5-logo img{width:220px;height:auto}
+  #s5-title{left:0;right:0;top:380px;text-align:center;font-size:128px;line-height:1.08}
+  #s5-title span{display:inline-block;opacity:0;margin:0 .13em}
+  #s5-cta{left:0;right:0;top:720px;display:flex;justify-content:center;gap:26px;opacity:0}
+  .btn-w{background:#fff;border-radius:999px;padding:20px 40px;font-size:34px;font-weight:700;box-shadow:0 10px 30px rgba(40,30,70,.12)}
+  .btn-o{background:var(--orange);color:#fff;border-radius:999px;padding:20px 44px;font-size:34px;font-weight:700;box-shadow:0 12px 30px rgba(255,107,44,.4)}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg">
+    <div class="blob" id="b1" style="width:900px;height:700px;background:#e9c8f0"></div>
+    <div class="blob" id="b2" style="width:800px;height:700px;background:#f6c9cf"></div>
+    <div class="blob" id="b3" style="width:700px;height:600px;background:#cfd8f5"></div>
+    <div class="blob" id="b4" style="width:600px;height:500px;background:#ffdcc4"></div>
+    <div id="grid"></div>
+    <div id="dots"></div>
+  </div>
+
+  <!-- S1: hook -->
+  <div class="scene" id="s1">
+    <div class="abs display grad-purple" id="s1-num">0</div>
+    <div class="abs" id="s1-sub">calls in 10 days.</div>
+  </div>
+
+  <!-- S2: the problem -->
+  <div class="scene" id="s2">
+    <div class="abs display" id="s2-word">MISSED.</div>
+    <div class="abs" id="s2-sub"><span class="pill" style="font-size:52px;padding:14px 36px">Your team can't pick up every one.</span></div>
+    <div id="cards"></div>
+    <div id="tags"></div>
+  </div>
+
+  <!-- S3: Eva takes the call -->
+  <div class="scene" id="s3">
+    <div class="abs" id="phone"><img src="assets/eva-phone.png" alt=""></div>
+    <div class="abs" id="live"><span class="pill"><i class="rec" id="recdot"></i>Eva on the line</span></div>
+    <div class="abs" id="panel">
+      <div class="hd"><b>Call Eva</b><div><i class="rec" style="background:var(--purple2)"></i>Live call · Multi-brand dealer group</div></div>
+      <div id="timer">00:00</div>
+      <div id="msgs"><div id="msgs-in"></div></div>
+      <div id="wave"></div>
+    </div>
+    <div class="chip" id="c1" style="top:170px"><span class="ck"></span><span>Name captured<em>Sasha</em></span></div>
+    <div class="chip" id="c2" style="top:290px"><span class="ck"></span><span>Callback number<em>Verified</em></span></div>
+    <div class="chip" id="c3" style="top:410px"><span class="ck"></span><span>Vehicle make<em>Ford</em></span></div>
+    <div class="chip" id="c4" style="top:530px"><span class="ck"></span><span>Routed to<em>Service team</em></span></div>
+    <div class="abs" id="routed"><div>Answered to transfer</div><b class="display grad-purple">31 sec</b></div>
+  </div>
+
+  <!-- S4: results -->
+  <div class="scene" id="s4">
+    <div class="stage-lbl" style="left:40px">Answered</div>
+    <div class="stage-lbl" style="left:760px">Qualified</div>
+    <div class="stage-lbl" style="left:1480px">Transferred</div>
+    <div class="abs" id="track"></div>
+    <div class="abs" id="track-fill"></div>
+    <div class="abs" id="mover"><span class="ck"></span><span><b>Service · Ford</b><span>Sasha · Callback verified</span></span></div>
+    <div class="stat" id="st1" style="left:150px"><div>Routed to the right team</div><b class="display grad-green" id="n1">0</b></div>
+    <div class="stat" id="st2" style="left:710px"><div>Sales leads captured</div><b class="display grad-magenta" id="n2">0</b></div>
+    <div class="stat" id="st3" style="left:1270px"><div>After-hours calls answered</div><b class="display grad-purple" id="n3">0</b></div>
+    <div class="abs" id="s4-foot"><span class="ck"></span>Sales, Service, Parts &amp; more. 24/7.</div>
+    <div class="abs" id="s4-note">One multi-brand dealer group · first 10 days of November</div>
+  </div>
+
+  <!-- S5: close -->
+  <div class="scene" id="s5">
+    <div class="abs" id="s5-logo"><img src="assets/lca-logo.png" alt=""></div>
+    <div class="abs display" id="s5-title"></div>
+    <div class="abs" id="s5-cta"><span class="btn-w">livechatagent.ai</span><span class="btn-o">Meet Eva</span></div>
+  </div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const easeOut = p => 1-Math.pow(1-p,3);
+const easeIO = p => p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+const back = p => {const c=1.7;return 1+(c+1)*Math.pow(p-1,3)+c*Math.pow(p-1,2)};
+const prog = (t,s,d,e=easeOut)=>e(clamp((t-s)/d));
+const fmt = n => Math.round(n).toLocaleString('en-US');
+// seeded random for deterministic layout
+let seed=7; const rnd=()=>{seed=(seed*16807)%2147483647;return (seed-1)/2147483646};
+
+// ---------- build ----------
+const dots=[]; for(let i=0;i<40;i++){const d=document.createElement('div');d.className='dot';$('dots').appendChild(d);
+  dots.push({el:d,x:rnd()*1920,y:rnd()*1080,vx:(rnd()-.5)*14,vy:(rnd()-.5)*14,s:.5+rnd()})}
+
+const callData=[
+  ['Caller #4821','On hold · 4 min',150,170],['Caller #1307','Ringing · 6 rings',600,90],['After hours','7:42 PM · Voicemail',1180,150],
+  ['Service enquiry','On hold · 7 min',1480,330],['Caller #5590','Ringing · 9 rings',110,520],['Sales enquiry','Hung up · 0:58',1420,640],
+  ['Caller #2264','On hold · 3 min',520,760],['Parts enquiry','Ringing · 5 rings',1010,800],['After hours','9:15 PM · Voicemail',820,420]];
+const phoneSvg='<svg width="24" height="24" viewBox="0 0 24 24" fill="#6a1b9a"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg>';
+const cards=callData.map((c,i)=>{const el=document.createElement('div');el.className='callcard';
+  el.innerHTML=`<div class="ic">${phoneSvg}</div><div><b>${c[0]}</b><span>${c[1]}</span></div>`;
+  el.style.left=c[2]+'px';el.style.top=c[3]+'px';$('cards').appendChild(el);return {el,i,x:c[2],y:c[3],r:(rnd()-.5)*8}});
+const tags=[];for(let i=0;i<16;i++){const el=document.createElement('div');el.className='tag';el.textContent='Missed call';$('tags').appendChild(el);
+  tags.push({el,x:80+rnd()*1650,y:60+rnd()*840,r:(rnd()-.5)*16,s:6.0+i*0.15})}
+
+const script=[
+  ['eva','Thanks for calling! How can I help you today?',9.7,0],
+  ['cust','Hey, can I speak with the service team?',10.8,7],
+  ['eva','Sure, could I grab your name please?',11.8,10],
+  ['cust','This is Sasha.',12.7,15],
+  ['eva','Is this the best number to reach you on, Sasha?',13.4,17],
+  ['cust','Yes.',14.4,22],
+  ['eva',"What's the make of your vehicle?",14.9,24],
+  ['cust',"It's a Ford.",15.8,29],
+  ['eva',"I'll connect you with our Service team now.",16.5,31]];
+const msgs=script.map(([w,txt])=>{const el=document.createElement('div');el.className='msg '+w;
+  el.innerHTML=`<small>${w==='eva'?'Eva':'Caller'}</small>${txt}`;$('msgs-in').appendChild(el);return el});
+const bars=[];for(let i=0;i<46;i++){const b=document.createElement('i');$('wave').appendChild(b);bars.push(b)}
+
+const words=['Every','Call','Answered.','<br>','Every','Lead','Captured.'];
+const wEls=[];words.forEach(w=>{if(w==='<br>'){$('s5-title').appendChild(document.createElement('br'));return}
+  const s=document.createElement('span');s.textContent=w;$('s5-title').appendChild(s);wEls.push(s)});
+// color last word of each line
+wEls[2].className='grad-purple';wEls[5].className='grad-purple';
+
+function sceneAlpha(t,a,b,fi=.5,fo=.5){return Math.min(prog(t,a,fi,x=>x),1-prog(t,b-fo,fo,x=>x))}
+function set(el,o,tr,f){el.style.opacity=o;if(tr!==undefined)el.style.transform=tr;if(f!==undefined)el.style.filter=f}
+
+// ---------- render(t) ----------
+function render(t){
+  // background drift
+  const B=[['b1',300,200,.13],['b2',1300,300,.11],['b3',500,700,.09],['b4',1400,750,.15]];
+  B.forEach(([id,x,y,f],i)=>{$(id).style.left=(x+Math.sin(t*f+i)*160-350)+'px';$(id).style.top=(y+Math.cos(t*f*1.3+i)*120-300)+'px'});
+  dots.forEach(d=>{d.el.style.left=((d.x+d.vx*t)%1920+1920)%1920+'px';d.el.style.top=((d.y+d.vy*t)%1080+1080)%1080+'px'});
+
+  // S1 0-4.4
+  $('s1').style.opacity=sceneAlpha(t,0,4.4,.3,.45);
+  const n=prog(t,.2,2.0,easeOut);
+  $('s1-num').textContent=fmt(1782*n);
+  $('s1-num').style.transform=`scale(${.85+.15*prog(t,0,1.2)}) translateY(${-30*prog(t,3.6,.8,easeIO)}px)`;
+  $('s1-num').style.filter=`blur(${12*prog(t,3.95,.45,x=>x)}px)`;
+  set($('s1-sub'),prog(t,1.0,.6),`translateY(${30*(1-prog(t,1.0,.6))}px)`);
+  if(t>2.6){const p=prog(t,2.6,.5);$('s1-sub').innerHTML='calls in 10 days. <span class="grad-purple" style="opacity:'+p+'">Who picks up?</span>'}
+  else $('s1-sub').textContent='calls in 10 days.';
+
+  // S2 4.3-9.3
+  $('s2').style.opacity=sceneAlpha(t,4.3,9.3,.4,.5);
+  const wp=prog(t,4.4,.8);
+  set($('s2-word'),wp*.95,`scale(${1.25-.25*wp})`,`blur(${(1-wp)*20 + prog(t,5.6,1.0)*6}px)`);
+  set($('s2-sub'),prog(t,7.2,.5),`translateY(${20*(1-prog(t,7.2,.5))}px)`);
+  cards.forEach(c=>{const s=4.6+c.i*.13,p=prog(t,s,.55,back);
+    const shake=t>s+.5&&t<8.6?Math.sin((t-s)*40)*2.5*(c.i%2?1:-1):0;
+    const fall=prog(t,8.5+c.i*.03,.7,x=>x*x);
+    set(c.el,clamp((t-s)/.3)*(1-fall),`translate(${shake}px,${(1-p)*60+fall*500}px) rotate(${c.r+shake*.6+fall*20}deg) scale(${.9+.1*p})`)});
+  tags.forEach(g=>{const p=prog(t,g.s,.35,back),fall=prog(t,8.5,.7,x=>x*x);
+    set(g.el,clamp((t-g.s)/.15)*(1-fall),`translate(${g.x}px,${g.y+fall*400}px) rotate(${g.r}deg) scale(${p})`)});
+
+  // S3 9.2-19.6
+  $('s3').style.opacity=sceneAlpha(t,9.2,19.6,.5,.5);
+  const ph=prog(t,9.2,.9);
+  set($('phone'),ph,`translateY(${(1-ph)*80}px)`);
+  set($('live'),prog(t,9.6,.5));
+  $('recdot').style.opacity=.4+.6*Math.abs(Math.sin(t*4));
+  const pp=prog(t,9.4,.8);
+  set($('panel'),pp,`translateX(${(1-pp)*60}px) scale(${.96+.04*pp})`);
+  // messages
+  let last=-1; script.forEach((m,i)=>{const p=prog(t,m[2],.4,back);set(msgs[i],clamp((t-m[2])/.25),`translateY(${(1-p)*20}px) scale(${.92+.08*p})`);if(t>=m[2])last=i});
+  // scroll to keep newest visible
+  const winH=$('msgs').clientHeight-40; let scroll=0;
+  script.forEach((m,i)=>{const bottom=msgs[i].offsetTop+msgs[i].offsetHeight; const target=Math.max(0,bottom-winH);
+    const p=prog(t,m[2],.45,easeIO); if(t>=m[2]) scroll = scroll + (target-scroll)*p; });
+  $('msgs-in').style.transform=`translateY(${-scroll}px)`;
+  // timer mapped to script timestamps
+  let sec=0; for(let i=0;i<script.length;i++){const a=script[i],b=script[i+1];
+    if(t>=a[2]){ sec = b? a[3]+(b[3]-a[3])*clamp((t-a[2])/(b[2]-a[2])) : a[3]; } }
+  $('timer').textContent='00:'+String(Math.floor(sec)).padStart(2,'0');
+  // waveform: speaking when inside a message window
+  const speaking = last>=0 && t-script[last][2]<.75 && t<17.4;
+  bars.forEach((b,i)=>{const amp=speaking?(.35+.65*Math.abs(Math.sin(t*9+i*.7)*Math.cos(t*5.3+i*.31))):.06;b.style.height=(8+48*amp)+'px'});
+  // chips
+  [['c1',12.9],['c2',14.6],['c3',16.0],['c4',16.8]].forEach(([id,s])=>{const p=prog(t,s,.5,back);set($(id),clamp((t-s)/.3),`translateX(${(1-p)*40}px)`)});
+  const rp=prog(t,17.3,.6);set($('routed'),rp,`translateY(${(1-rp)*30}px)`);
+
+  // S4 19.4-25.6
+  $('s4').style.opacity=sceneAlpha(t,19.4,25.6,.5,.5);
+  const tp=prog(t,19.8,3.2,easeIO);
+  $('track-fill').style.width=(1440*tp)+'px';
+  $('mover').style.left=(240+1440*tp-210)+'px';
+  set($('mover'),prog(t,19.6,.4));
+  document.querySelectorAll('.stage-lbl').forEach((el,i)=>{el.style.opacity=.35+.65*(tp>=i*.5-.02?1:0);el.style.color=tp>=i*.5-.02?'#14121a':'#9a96a8'});
+  [['st1','n1',1218,20.2],['st2','n2',208,21.2],['st3','n3',89,22.2]].forEach(([id,nid,v,s])=>{
+    const p=prog(t,s,.6,back);set($(id),clamp((t-s)/.3),`translateY(${(1-p)*50}px)`);
+    $(nid).textContent=fmt(v*prog(t,s+.1,1.3))});
+  const fp=prog(t,23.4,.5);set($('s4-foot'),fp,`translateY(${(1-fp)*20}px)`);
+  set($('s4-note'),prog(t,23.8,.5));
+
+  // S5 25.5-30
+  $('s5').style.opacity=sceneAlpha(t,25.5,31,.5,.5);
+  set($('s5-logo'),prog(t,25.7,.6));
+  wEls.forEach((w,i)=>{const s=25.8+i*.22,p=prog(t,s,.5);set(w,p,`translateY(${(1-p)*40}px)`,`blur(${(1-p)*10}px)`)});
+  const cp=prog(t,27.6,.6,back);set($('s5-cta'),clamp((t-27.6)/.3),`translateY(${(1-cp)*30}px) scale(${.9+.1*cp})`);
+}
+window.render=render;
+render(0);
+</script>
+</body>
+</html>
