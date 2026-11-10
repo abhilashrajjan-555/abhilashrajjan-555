@@ -1,6 +1,7 @@
 // Renders index.html frame by frame to MP4.
 // Usage: node render.js out.mp4            (full 30s video, no audio)
 //        node render.js --stills dir 1 5 9  (PNG stills at given seconds)
+//        add --vertical for the 9:16 version (vertical.html, 1080x1920)
 const { chromium } = require('playwright');
 const { spawn } = require('child_process');
 const path = require('path');
@@ -9,10 +10,13 @@ const fs = require('fs');
 const FPS = 30, DURATION = 30;
 
 (async () => {
-  const args = process.argv.slice(2);
+  let args = process.argv.slice(2);
+  const vertical = args.includes('--vertical');
+  args = args.filter(a => a !== '--vertical');
+  const W = vertical ? 1080 : 1920, H = vertical ? 1920 : 1080;
   const browser = await chromium.launch();
-  const page = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
-  await page.goto('file://' + path.join(__dirname, 'index.html'));
+  const page = await browser.newPage({ viewport: { width: W, height: H } });
+  await page.goto('file://' + path.join(__dirname, vertical ? 'vertical.html' : 'index.html'));
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(300);
 
