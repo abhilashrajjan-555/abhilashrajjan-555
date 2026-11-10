@@ -4,11 +4,12 @@
 
 - `index.html`: the animation. `render(t)` draws the frame at `t` seconds.
 - `render.js`: captures 900 frames with Playwright and encodes them with ffmpeg.
-- `music.py`: generates the original music bed (no third-party audio).
+- `music.py`: generates the original upbeat music bed (124 BPM, synced to scene changes, no third-party audio).
 
 ```bash
 node render.js silent.mp4
-python3 music.py music.wav
+python3 music.py raw.wav
+ffmpeg -i raw.wav -af loudnorm=I=-14:TP=-1:LRA=11 -ar 44100 music.wav
 ffmpeg -i silent.mp4 -i music.wav -c:v copy -c:a aac -b:a 192k -shortest call-eva.mp4
 ```
 
