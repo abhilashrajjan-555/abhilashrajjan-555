@@ -1,0 +1,52 @@
+{
+  "_source": "Call Eva dashboard, one multi-brand dealer group, 1-10 Nov 2026. Dealer name removed.",
+  "mode": "inbound",
+  "music": { "landscape": "upbeat", "vertical": "lofi" },
+  "hook": { "value": 1782, "line": "calls in 10 days.", "accent": "Who picks up?" },
+  "problem": {
+    "word": "MISSED.",
+    "subtitle": "Your team can't pick up every one.",
+    "tag": "Missed call",
+    "cards": [
+      ["Caller #4821", "On hold · 4 min"], ["Caller #1307", "Ringing · 6 rings"], ["After hours", "7:42 PM · Voicemail"],
+      ["Service enquiry", "On hold · 7 min"], ["Caller #5590", "Ringing · 9 rings"], ["Sales enquiry", "Hung up · 0:58"],
+      ["Caller #2264", "On hold · 3 min"], ["Parts enquiry", "Ringing · 5 rings"], ["After hours", "9:15 PM · Voicemail"]
+    ]
+  },
+  "demo": {
+    "title": "Call Eva",
+    "status": "Live call · Multi-brand dealer group",
+    "agentName": "Eva",
+    "userName": "Caller",
+    "livePill": "Eva on the line",
+    "lines": [
+      ["agent", "Thanks for calling! How can I help you today?", 0],
+      ["user", "Hey, can I speak with the service team?", 7],
+      ["agent", "Sure, could I grab your name please?", 10],
+      ["user", "This is Sasha.", 15],
+      ["agent", "Is this the best number to reach you on, Sasha?", 17],
+      ["user", "Yes.", 22],
+      ["agent", "What's the make of your vehicle?", 24],
+      ["user", "It's a Ford.", 29],
+      ["agent", "I'll connect you with our Service team now.", 31]
+    ],
+    "chips": [["Name captured", "Sasha", 3], ["Callback number", "Verified", 5], ["Vehicle make", "Ford", 7], ["Routed to", "Service team", 8]],
+    "result": { "label": "Answered to transfer", "value": "31 sec" }
+  },
+  "results": {
+    "stages": ["Answered", "Qualified", "Transferred"],
+    "mover": ["Service · Ford", "Sasha · Callback verified"],
+    "stats": [
+      { "label": "Routed to the right team", "value": 1218, "color": "green" },
+      { "label": "Sales leads captured", "value": 208, "color": "magenta" },
+      { "label": "After-hours calls answered", "value": 89, "color": "purple" }
+    ],
+    "footer": "Sales, Service, Parts & more. 24/7.",
+    "note": "One multi-brand dealer group · first 10 days of November"
+  },
+  "close": {
+    "lines": [["Every Call", "Answered."], ["Every Lead", "Captured."]],
+    "url": "livechatagent.ai",
+    "cta": "Meet Eva"
+  }
+}

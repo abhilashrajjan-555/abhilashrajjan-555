@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Promo Video</title>
+<style>
+  :root{--ink:#14121a;--muted:#6b6878;--line:#e6e3ee;--purple:#6a1b9a;--purple2:#9c27b0;--green:#1fae74;--red:#e53935;--orange:#ff6b2c}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{overflow:hidden;background:#f8f7fb}
+  body{font-family:"Inter","Inter Display",sans-serif;color:var(--ink)}
+  #stage{position:relative;overflow:hidden;background:#f8f7fb}
+  body.L,body.L #stage{width:1920px;height:1080px}
+  body.V,body.V #stage{width:1080px;height:1920px}
+  .abs{position:absolute}
+  .scene{position:absolute;inset:0;opacity:0}
+  .display{font-family:"Inter Display";font-weight:900;letter-spacing:-0.04em}
+  .blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.55}
+  #grid{position:absolute;inset:0;background-image:linear-gradient(rgba(120,110,150,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(120,110,150,.05) 1px,transparent 1px);background-size:64px 64px}
+  .dot{position:absolute;width:5px;height:5px;border-radius:50%;background:#55516a;opacity:.35}
+  .grad-purple{background:linear-gradient(90deg,#5b1585,#a0279e);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .grad-green{background:linear-gradient(90deg,#14a86b,#3bc98a);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .grad-magenta{background:linear-gradient(90deg,#a3134f,#d63a7a);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:10px 20px;font-weight:700;font-size:20px;box-shadow:0 8px 24px rgba(40,30,70,.12)}
+  .rec{width:12px;height:12px;border-radius:50%;background:var(--green);display:inline-block}
+  .ck{width:34px;height:34px;border-radius:50%;border:3px solid var(--green);display:flex;align-items:center;justify-content:center;flex:none}
+  .ck::after{content:"";width:8px;height:15px;border:solid var(--green);border-width:0 4px 4px 0;transform:rotate(45deg) translate(-1px,-2px)}
+
+  /* S1 hook */
+  #s1-num{left:0;right:0;text-align:center;line-height:1}
+  #s1-sub{left:0;right:0;text-align:center;font-weight:700;color:#4a4658;font-family:"Inter Display";line-height:1.25}
+  .L #s1-num{top:300px;font-size:300px} .L #s1-sub{top:640px;font-size:72px}
+  .V #s1-num{top:640px;font-size:260px} .V #s1-sub{top:960px;font-size:68px}
+
+  /* S2 problem */
+  #s2-word{left:0;right:0;text-align:center;line-height:1;color:#17151d}
+  .L #s2-word{top:330px;font-size:380px} .V #s2-word{top:780px;font-size:190px}
+  #s2-sub{left:0;right:0;text-align:center;z-index:5}
+  .L #s2-sub{top:950px} .V #s2-sub{top:1440px}
+  #s2-sub .pill{font-family:"Inter Display";font-weight:800;padding:14px 36px}
+  .L #s2-sub .pill{font-size:52px} .V #s2-sub .pill{font-size:44px}
+  .callcard{position:absolute;width:330px;padding:20px 24px;background:rgba(255,255,255,.92);border-radius:16px;box-shadow:0 10px 30px rgba(40,30,70,.12);display:flex;gap:16px;align-items:center}
+  .callcard .ic{width:48px;height:48px;border-radius:50%;background:#efeaf6;display:flex;align-items:center;justify-content:center;flex:none}
+  .callcard b{display:block;font-size:22px;font-weight:700}
+  .callcard span{font-size:18px;color:var(--muted)}
+  .tag{position:absolute;background:var(--red);color:#fff;font-weight:700;font-size:20px;padding:7px 16px;border-radius:10px;box-shadow:0 6px 16px rgba(229,57,53,.35);white-space:nowrap}
+
+  /* S3 demo */
+  #phone img{width:100%;height:100%;display:block;filter:drop-shadow(0 30px 50px rgba(40,30,80,.25))}
+  #dial{position:absolute;left:8%;right:8%;top:6%;bottom:6%;border-radius:36px;background:rgba(20,14,40,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;opacity:0}
+  #dial b{font-size:30px} #dial span{font-size:20px;opacity:.85;margin-top:8px}
+  .ring{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:3px solid rgba(255,255,255,.8)}
+  .L #phone{left:180px;top:150px;width:378px;height:781px} .V #phone{left:60px;top:210px;width:300px;height:620px}
+  #live{text-align:center} .L #live{left:250px;top:880px;width:240px} .V #live{left:0;top:845px;width:420px}
+  #panel{background:rgba(255,255,255,.9);border-radius:26px;border:2px solid rgba(156,39,176,.25);box-shadow:0 0 0 10px rgba(156,39,176,.06),0 30px 60px rgba(40,30,80,.12);overflow:hidden}
+  .L.call #panel{left:660px;top:150px;width:660px;height:780px} .V.call #panel{left:60px;top:930px;width:960px;height:540px}
+  .L.chat #panel{left:240px;top:150px;width:820px;height:780px} .V.chat #panel{left:60px;top:230px;width:960px;height:800px}
+  #panel .hd{padding:28px 32px 20px;border-bottom:1px solid var(--line)}
+  #panel .hd b{font-size:26px}
+  #panel .hd div{font-size:18px;color:var(--purple);font-weight:600;margin-top:6px;display:flex;gap:10px;align-items:center}
+  #timer{position:absolute;right:32px;top:30px;font-family:"Inter Display";font-weight:800;font-size:28px;font-variant-numeric:tabular-nums;color:#3b3748}
+  #wave{position:absolute;left:32px;right:32px;bottom:26px;height:56px;display:flex;align-items:center;gap:5px}
+  #wave i{flex:1;background:linear-gradient(#a0279e,#5b1585);border-radius:4px;height:10px}
+  #askbar{position:absolute;left:32px;right:32px;bottom:26px;height:56px;border-radius:14px;background:#f1eff5;color:#8d899b;font-size:20px;display:flex;align-items:center;padding:0 22px}
+  .chat #wave,.chat #timer,.chat #phone,.chat #live{display:none} .call #askbar{display:none}
+  #msgs{position:absolute;left:0;right:0;top:110px;bottom:100px;overflow:hidden}
+  #msgs-in{position:absolute;left:32px;right:32px;top:24px}
+  .msg{max-width:78%;padding:16px 22px;border-radius:18px;line-height:1.35;margin-bottom:16px;opacity:0}
+  .L .msg{font-size:24px} .V .msg{font-size:28px;max-width:80%}
+  .msg small{display:block;font-size:15px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px;opacity:.7}
+  .agent{background:#f2eef7} .agent small{color:var(--purple)}
+  .user{background:#fff;border:2px solid rgba(156,39,176,.45);margin-left:auto;box-shadow:0 6px 18px rgba(156,39,176,.12)} .user small{color:#6b6878}
+  .chip{position:absolute;background:#fff;border-radius:16px;padding:18px 22px;font-weight:600;box-shadow:0 10px 30px rgba(40,30,70,.1);display:flex;align-items:center;gap:14px;opacity:0}
+  .chip em{font-style:normal;color:var(--muted);font-weight:500;display:block}
+  .L .chip{font-size:22px} .L .chip em{font-size:18px} .V .chip{font-size:28px} .V .chip em{font-size:22px}
+  #result{text-align:center;opacity:0}
+  #result div{font-size:26px;font-weight:600;color:#4a4658}
+  #result b{font-size:96px;line-height:1.05}
+
+  /* S4 results */
+  .stage-lbl{position:absolute;text-align:center;font-size:30px;font-weight:700}
+  .L .stage-lbl{top:200px;width:400px} .V .stage-lbl{top:250px;width:300px}
+  #track{height:6px;background:#e3e0ea;border-radius:3px} #track-fill{height:6px;background:var(--green);border-radius:3px;box-shadow:0 0 14px rgba(31,174,116,.6)}
+  .L #track,.L #track-fill{left:240px;top:300px} .L #track{width:1440px}
+  .V #track,.V #track-fill{left:90px;top:360px} .V #track{width:900px}
+  #mover{width:420px;background:#fff;border:3px solid #7fdcb4;border-radius:20px;padding:18px 24px;display:flex;gap:16px;align-items:center;box-shadow:0 0 0 10px rgba(31,174,116,.08),0 18px 40px rgba(31,174,116,.18)}
+  .L #mover{top:252px} .V #mover{top:312px}
+  #mover b{font-size:26px;display:block} #mover span{font-size:19px;color:var(--muted)}
+  .stat{position:absolute;background:rgba(255,255,255,.95);border-radius:22px;padding:34px 40px;box-shadow:0 18px 50px rgba(40,30,70,.10);opacity:0}
+  .L .stat{top:470px;width:500px;height:250px} .V .stat{left:90px;width:900px;height:240px}
+  .stat div{font-size:28px;font-weight:600;color:#4a4658;white-space:nowrap}
+  .stat b{display:block;font-size:136px;line-height:1.15;margin-top:6px}
+  #s4-foot{left:0;right:0;text-align:center;font-size:36px;font-weight:700;opacity:0;display:flex;justify-content:center;gap:14px;align-items:center}
+  #s4-note{left:0;right:0;text-align:center;font-size:22px;color:var(--muted);opacity:0}
+  .L #s4-foot{top:800px} .L #s4-note{top:880px} .V #s4-foot{top:1370px} .V #s4-note{top:1440px}
+
+  /* S5 close */
+  #s5-logo{left:0;right:0;text-align:center;opacity:0} #s5-logo img{width:220px;height:auto}
+  #s5-title{left:0;right:0;text-align:center;line-height:1.08}
+  #s5-title span{display:inline-block;opacity:0;margin:0 .13em}
+  #s5-cta{left:0;right:0;display:flex;justify-content:center;gap:26px;opacity:0}
+  .L #s5-logo{top:250px} .L #s5-title{top:380px;font-size:128px} .L #s5-cta{top:720px}
+  .V #s5-logo{top:400px} .V #s5-title{top:560px;font-size:130px} .V #s5-cta{top:1230px}
+  .btn-w{background:#fff;border-radius:999px;padding:20px 40px;font-size:34px;font-weight:700;box-shadow:0 10px 30px rgba(40,30,70,.12)}
+  .btn-o{background:var(--orange);color:#fff;border-radius:999px;padding:20px 44px;font-size:34px;font-weight:700;box-shadow:0 12px 30px rgba(255,107,44,.4)}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg">
+    <div class="blob" id="b1" style="width:900px;height:700px;background:#e9c8f0"></div>
+    <div class="blob" id="b2" style="width:800px;height:700px;background:#f6c9cf"></div>
+    <div class="blob" id="b3" style="width:700px;height:600px;background:#cfd8f5"></div>
+    <div class="blob" id="b4" style="width:600px;height:500px;background:#ffdcc4"></div>
+    <div id="grid"></div><div id="dots"></div>
+  </div>
+  <div class="scene" id="s1"><div class="abs display grad-purple" id="s1-num">0</div><div class="abs" id="s1-sub"></div></div>
+  <div class="scene" id="s2"><div class="abs display" id="s2-word"></div><div class="abs" id="s2-sub"><span class="pill" id="s2-pill"></span></div><div id="cards"></div><div id="tags"></div></div>
+  <div class="scene" id="s3">
+    <div class="abs" id="phone"><img id="phone-img" alt=""><div id="dial"><i class="ring" id="r1"></i><i class="ring" id="r2"></i><b id="dial-t"></b><span id="dial-s"></span></div></div>
+    <div class="abs" id="live"><span class="pill"><i class="rec" id="recdot"></i><span id="live-t"></span></span></div>
+    <div class="abs" id="panel">
+      <div class="hd"><b id="p-title"></b><div><i class="rec" style="background:var(--purple2)"></i><span id="p-status"></span></div></div>
+      <div id="timer">00:00</div>
+      <div id="msgs"><div id="msgs-in"></div></div>
+      <div id="wave"></div><div id="askbar">Ask anything...</div>
+    </div>
+    <div id="chips"></div>
+    <div class="abs" id="result"><div id="res-l"></div><b class="display grad-purple" id="res-v"></b></div>
+  </div>
+  <div class="scene" id="s4">
+    <div id="stages"></div>
+    <div class="abs" id="track"></div><div class="abs" id="track-fill"></div>
+    <div class="abs" id="mover"><span class="ck"></span><span><b id="mv-t"></b><span id="mv-s"></span></span></div>
+    <div id="stats"></div>
+    <div class="abs" id="s4-foot"><span class="ck"></span><span id="foot-t"></span></div>
+    <div class="abs" id="s4-note"></div>
+  </div>
+  <div class="scene" id="s5">
+    <div class="abs" id="s5-logo"><img id="logo-img" alt=""></div>
+    <div class="abs display" id="s5-title"></div>
+    <div class="abs" id="s5-cta"><span class="btn-w" id="cta-url"></span><span class="btn-o" id="cta-btn"></span></div>
+  </div>
+</div>
+<script>
+// Scene timings (seconds). Fixed so the music scripts stay in sync.
+const T={s1:[0,4.4],s2:[4.3,9.3],s3:[9.2,19.6],s4:[19.4,25.6],s5:[25.5,31]};
+const $=id=>document.getElementById(id);
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const easeOut=p=>1-Math.pow(1-p,3), easeIO=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+const back=p=>{const c=1.7;return 1+(c+1)*Math.pow(p-1,3)+c*Math.pow(p-1,2)};
+const prog=(t,s,d,e=easeOut)=>e(clamp((t-s)/d));
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return (seed-1)/2147483646};
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function set(el,o,tr,f){el.style.opacity=o;if(tr!==undefined)el.style.transform=tr;if(f!==undefined)el.style.filter=f}
+function sceneAlpha(t,[a,b],fi=.5,fo=.5){return Math.min(prog(t,a,fi,x=>x),1-prog(t,b-fo,fo,x=>x))}
+
+let C,V,W,H,S={};
+const LAYOUT={
+  L:{cards:[[150,170],[600,90],[1180,150],[1480,330],[110,520],[1420,640],[520,760],[1010,800],[820,420]],tagX:[80,1650],tagY:[60,840],
+     blobs:[[300,200],[1300,300],[500,700],[1400,750]],
+     chipsCall:i=>[1400,170+120*i,420],chipsChat:i=>[1180,170+120*i,520],resultCall:[1400,690,440],resultChat:[1180,690,520],
+     stageX:[40,760,1480],trackX:240,trackW:1440,moverMax:1920-440,statPos:i=>({left:150+560*i+'px'})},
+  V:{cards:[[60,250],[690,320],[110,480],[660,580],[40,1060],[700,1110],[120,1260],[640,1290],[380,400]],tagX:[40,860],tagY:[230,1150],
+     blobs:[[250,350],[800,800],[300,1300],[850,1650]],
+     chipsCall:i=>[400,230+140*i,620],chipsChat:i=>[60+490*(i%2),1070+120*Math.floor(i/2),470],resultCall:[0,1490,1080],resultChat:[0,1330,1080],
+     stageX:[40,390,740],trackX:90,trackW:900,moverMax:630,statPos:i=>({top:520+280*i+'px'})}
+};
+
+function init(config,format){
+  C=config;V=format==='vertical';W=V?1080:1920;H=V?1920:1080;const Lx=LAYOUT[V?'V':'L'];S.L=Lx;
+  document.body.className=(V?'V ':'L ')+(C.mode==='chat'?'chat':'call');
+  // background
+  S.dots=[];for(let i=0;i<40;i++){const d=document.createElement('div');d.className='dot';$('dots').appendChild(d);S.dots.push({el:d,x:rnd()*W,y:rnd()*H,vx:(rnd()-.5)*14,vy:(rnd()-.5)*14})}
+  // S1
+  const h=C.hook;S.hook=h;
+  // S2
+  $('s2-word').textContent=C.problem.word;$('s2-pill').textContent=C.problem.subtitle;
+  const icon=C.mode==='chat'
+    ?'<svg width="24" height="24" viewBox="0 0 24 24" fill="#6a1b9a"><path d="M4 4h16a2 2 0 012 2v10a2 2 0 01-2 2H8l-4 4V6a2 2 0 012-2z"/></svg>'
+    :'<svg width="24" height="24" viewBox="0 0 24 24" fill="#6a1b9a"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg>';
+  S.cards=C.problem.cards.slice(0,9).map((c,i)=>{const el=document.createElement('div');el.className='callcard';
+    el.innerHTML=`<div class="ic">${icon}</div><div><b>${esc(c[0])}</b><span>${esc(c[1])}</span></div>`;
+    const [x,y]=Lx.cards[i];el.style.left=x+'px';el.style.top=y+'px';$('cards').appendChild(el);return {el,i,r:(rnd()-.5)*8}});
+  S.tags=[];for(let i=0;i<16;i++){const el=document.createElement('div');el.className='tag';el.textContent=C.problem.tag;$('tags').appendChild(el);
+    S.tags.push({el,x:Lx.tagX[0]+rnd()*Lx.tagX[1],y:Lx.tagY[0]+rnd()*Lx.tagY[1],r:(rnd()-.5)*16,s:6.0+i*.15})}
+  // S3
+  const d=C.demo;$('p-title').textContent=d.title;$('p-status').textContent=d.status;$('live-t').textContent=d.livePill||'';
+  $('phone-img').src=C.phoneImage||'assets/eva-phone.png';
+  S.out=C.mode==='outbound';
+  if(S.out){$('dial-t').textContent=d.dialing||'Calling...';$('dial-s').textContent=d.dialingSub||'Outgoing call';}
+  const start=C.mode==='chat'?9.8:(S.out?11.2:9.7),end=16.6,n=d.lines.length;
+  S.lines=d.lines.map((l,i)=>({who:l[0],text:l[1],stamp:l[2],at:n>1?start+i*(end-start)/(n-1):start}));
+  S.msgs=S.lines.map(l=>{const el=document.createElement('div');el.className='msg '+(l.who==='agent'?'agent':'user');
+    el.innerHTML=`<small>${esc(l.who==='agent'?d.agentName:d.userName)}</small>${esc(l.text)}`;$('msgs-in').appendChild(el);return el});
+  S.bars=[];for(let i=0;i<46;i++){const b=document.createElement('i');$('wave').appendChild(b);S.bars.push(b)}
+  const chipFn=C.mode==='chat'?Lx.chipsChat:Lx.chipsCall;
+  S.chips=d.chips.slice(0,4).map((c,i,arr)=>{const el=document.createElement('div');el.className='chip';const [x,y,w]=chipFn(i);
+    el.style.left=x+'px';el.style.top=y+'px';el.style.width=w+'px';
+    el.innerHTML=`<span class="ck"></span><span>${esc(c[0])}<em>${esc(c[1])}</em></span>`;$('chips').appendChild(el);
+    const li=c[2]!==undefined?c[2]:Math.round((n-1)*(i+1)/arr.length*0.9);return {el,at:S.lines[Math.min(n-1,li)].at+.2}});
+  const rp=C.mode==='chat'?Lx.resultChat:Lx.resultCall;Object.assign($('result').style,{left:rp[0]+'px',top:rp[1]+'px',width:rp[2]+'px'});
+  $('res-l').textContent=d.result.label;$('res-v').textContent=d.result.value;
+  // S4
+  const r=C.results;
+  r.stages.forEach((s,i)=>{const el=document.createElement('div');el.className='stage-lbl';el.textContent=s;el.style.left=Lx.stageX[i]+'px';$('stages').appendChild(el)});
+  $('mv-t').textContent=r.mover[0];$('mv-s').textContent=r.mover[1];
+  S.stats=r.stats.slice(0,3).map((s,i)=>{const el=document.createElement('div');el.className='stat';Object.assign(el.style,Lx.statPos(i));
+    el.innerHTML=`<div>${esc(s.label)}</div><b class="display grad-${s.color||'purple'}"></b>`;$('stats').appendChild(el);return {el,b:el.querySelector('b'),s}});
+  $('foot-t').textContent=r.footer||'';$('s4-note').textContent=r.note||'';
+  if(!r.footer)$('s4-foot').style.display='none';
+  // S5
+  $('logo-img').src=C.logoImage||'assets/lca-logo.png';
+  S.words=[];C.close.lines.forEach((ln,li)=>{
+    if(li)$('s5-title').appendChild(document.createElement('br'));
+    const [plain,accent]=ln;
+    plain.split(' ').filter(Boolean).forEach(w=>{const s=document.createElement('span');s.textContent=w;$('s5-title').appendChild(s);S.words.push(s)});
+    if(V&&accent)$('s5-title').appendChild(document.createElement('br'));
+    if(accent)accent.split(' ').filter(Boolean).forEach(w=>{const s=document.createElement('span');s.textContent=w;s.className='grad-purple';$('s5-title').appendChild(s);S.words.push(s)});
+  });
+  $('cta-url').textContent=C.close.url;$('cta-btn').textContent=C.close.cta;
+  render(0);
+}
+
+function valueText(s,p){const num=typeof s.value==='number';return (s.prefix||'')+(num?fmt(s.value*p):s.value)+(s.suffix||'')}
+
+function render(t){
+  const Lx=S.L;
+  ['b1','b2','b3','b4'].forEach((id,i)=>{const [x,y]=Lx.blobs[i],f=[.13,.11,.09,.15][i];$(id).style.left=(x+Math.sin(t*f+i)*160-350)+'px';$(id).style.top=(y+Math.cos(t*f*1.3+i)*120-300)+'px'});
+  S.dots.forEach(d=>{d.el.style.left=((d.x+d.vx*t)%W+W)%W+'px';d.el.style.top=((d.y+d.vy*t)%H+H)%H+'px'});
+
+  // S1
+  $('s1').style.opacity=sceneAlpha(t,T.s1,.3,.45);
+  const h=S.hook;$('s1-num').textContent=valueText(h,prog(t,.2,2.0));
+  $('s1-num').style.transform=`scale(${.85+.15*prog(t,0,1.2)}) translateY(${-30*prog(t,3.6,.8,easeIO)}px)`;
+  $('s1-num').style.filter=`blur(${12*prog(t,3.95,.45,x=>x)}px)`;
+  set($('s1-sub'),prog(t,1.0,.6),`translateY(${30*(1-prog(t,1.0,.6))}px)`);
+  const ap=prog(t,2.6,.5);
+  $('s1-sub').innerHTML=esc(h.line)+(t>2.6&&h.accent?(V?'<br>':' ')+`<span class="grad-purple" style="opacity:${ap}">${esc(h.accent)}</span>`:'');
+
+  // S2
+  $('s2').style.opacity=sceneAlpha(t,T.s2,.4,.5);
+  const wp=prog(t,4.4,.8);
+  set($('s2-word'),wp*.95,`scale(${1.25-.25*wp})`,`blur(${(1-wp)*20+prog(t,5.6,1.0)*6}px)`);
+  set($('s2-sub'),prog(t,7.2,.5),`translateY(${20*(1-prog(t,7.2,.5))}px)`);
+  S.cards.forEach(c=>{const s=4.6+c.i*.13,p=prog(t,s,.55,back);const shake=t>s+.5&&t<8.6?Math.sin((t-s)*40)*2.5*(c.i%2?1:-1):0;
+    const fall=prog(t,8.5+c.i*.03,.7,x=>x*x);
+    set(c.el,clamp((t-s)/.3)*(1-fall),`translate(${shake}px,${(1-p)*60+fall*500}px) rotate(${c.r+shake*.6+fall*20}deg) scale(${.9+.1*p})`)});
+  S.tags.forEach(g=>{const p=prog(t,g.s,.35,back),fall=prog(t,8.5,.7,x=>x*x);
+    set(g.el,clamp((t-g.s)/.15)*(1-fall),`translate(${g.x}px,${g.y+fall*400}px) rotate(${g.r}deg) scale(${p})`)});
+
+  // S3
+  $('s3').style.opacity=sceneAlpha(t,T.s3,.5,.5);
+  const ph=prog(t,9.2,.9);set($('phone'),ph,`translateY(${(1-ph)*80}px)`);
+  set($('live'),prog(t,9.6,.5));$('recdot').style.opacity=.4+.6*Math.abs(Math.sin(t*4));
+  if(S.out){ // outbound: dialling overlay, then connected
+    const on=prog(t,9.5,.4)*(1-prog(t,10.9,.4));$('dial').style.opacity=on;
+    [['r1',0],['r2',.6]].forEach(([id,o])=>{const k=((t-9.5+o)%1.2)/1.2;$(id).style.transform=`scale(${1+k*1.6})`;$(id).style.opacity=(1-k)*.9});
+    $('live-t').textContent=t<11?(C.demo.dialingPill||'Dialling...'):(C.demo.livePill||'Connected');
+  }
+  const pp=prog(t,9.4,.8);set($('panel'),pp,`translateX(${(1-pp)*60}px) scale(${.96+.04*pp})`);
+  let last=-1;S.lines.forEach((l,i)=>{const p=prog(t,l.at,.4,back);set(S.msgs[i],clamp((t-l.at)/.25),`translateY(${(1-p)*20}px) scale(${.92+.08*p})`);if(t>=l.at)last=i});
+  const winH=$('msgs').clientHeight-40;let scroll=0;
+  S.lines.forEach((l,i)=>{const bottom=S.msgs[i].offsetTop+S.msgs[i].offsetHeight,target=Math.max(0,bottom-winH),p=prog(t,l.at,.45,easeIO);if(t>=l.at)scroll+=(target-scroll)*p});
+  $('msgs-in').style.transform=`translateY(${-scroll}px)`;
+  if(C.mode!=='chat'){
+    let sec=0;for(let i=0;i<S.lines.length;i++){const a=S.lines[i],b=S.lines[i+1];if(t>=a.at&&a.stamp!==undefined){sec=b&&b.stamp!==undefined?a.stamp+(b.stamp-a.stamp)*clamp((t-a.at)/(b.at-a.at)):a.stamp}}
+    $('timer').textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(Math.floor(sec%60)).padStart(2,'0');
+    const speaking=last>=0&&t-S.lines[last].at<.75&&t<17.4;
+    S.bars.forEach((b,i)=>{const amp=speaking?(.35+.65*Math.abs(Math.sin(t*9+i*.7)*Math.cos(t*5.3+i*.31))):.06;b.style.height=(8+48*amp)+'px'});
+  }
+  S.chips.forEach(c=>{const p=prog(t,c.at,.5,back);set(c.el,clamp((t-c.at)/.3),`translateX(${(1-p)*40}px)`)});
+  const rp=prog(t,17.3,.6);set($('result'),rp,`translateY(${(1-rp)*30}px)`);
+
+  // S4
+  $('s4').style.opacity=sceneAlpha(t,T.s4,.5,.5);
+  const tp=prog(t,19.8,3.2,easeIO);
+  $('track-fill').style.width=(Lx.trackW*tp)+'px';
+  $('mover').style.left=Math.min(Lx.moverMax,Math.max(30,Lx.trackX+Lx.trackW*tp-210))+'px';
+  set($('mover'),prog(t,19.6,.4));
+  document.querySelectorAll('.stage-lbl').forEach((el,i)=>{const on=tp>=i*.5-.02;el.style.opacity=on?1:.35;el.style.color=on?'#14121a':'#9a96a8'});
+  S.stats.forEach((st,i)=>{const s=20.2+i;const p=prog(t,s,.6,back);set(st.el,clamp((t-s)/.3),`translateY(${(1-p)*50}px)`);st.b.textContent=valueText(st.s,prog(t,s+.1,1.3))});
+  const fp=prog(t,23.4,.5);set($('s4-foot'),fp,`translateY(${(1-fp)*20}px)`);set($('s4-note'),prog(t,23.8,.5));
+
+  // S5
+  $('s5').style.opacity=sceneAlpha(t,T.s5,.5,.5);
+  set($('s5-logo'),prog(t,25.7,.6));
+  S.words.forEach((w,i)=>{const s=25.8+i*.22,p=prog(t,s,.5);set(w,p,`translateY(${(1-p)*40}px)`,`blur(${(1-p)*10}px)`)});
+  const cp=prog(t,27.6,.6,back);set($('s5-cta'),clamp((t-27.6)/.3),`translateY(${(1-cp)*30}px) scale(${.9+.1*cp})`);
+}
+window.init=init;window.render=render;
+</script>
+</body>
+</html>
